@@ -1,14 +1,15 @@
 //=================================================================
-// ì¬Ò   FTJ
-// ‰”Åì¬“úF2025/06/17
-// •ÏX—š—ğ F
-//   - 2025/06/17 V‹Kì¬i‰”Åj
-//   - 2025/06/22 ƒOƒ‰ƒt•`‰æƒ‰ƒCƒuƒ‰ƒŠ‚ÌXV
-//   - 2025/06/27 •\¦Œ`®Ø‘Öi–_/Ü‚êüj‹@”\‚Ì’Ç‰Á
-//   - 2025/07/01 ƒf[ƒ^Œ”‚ª‘½‚¢ê‡‚Ì•\¦‰ü‘P
-// ƒ\[ƒXŠT—vF
-//   Œğ’Êî•ñ‚ğƒOƒ‰ƒt‚Å‰Â‹‰»‚·‚é‰æ–ÊBÜ‚êü‚â–_ƒOƒ‰ƒt•\¦‚É‘Î‰‚·‚éB
+// ä½œæˆè€…   ï¼šTJ
+// ä½œæˆæ—¥   ï¼š2025/06/17
+// æ›´æ–°å±¥æ­´ï¼š
+//   - 2025/06/17  æ–°è¦ä½œæˆï¼ˆåˆç‰ˆï¼‰
+//   - 2025/06/22  å±¥æ­´è¡¨ç¤ºæ©Ÿèƒ½ã®æ”¹å–„
+//   - 2025/06/27  å±¥æ­´å‰Šé™¤æ©Ÿèƒ½ã®è¿½åŠ 
+//   - 2025/07/01  UIã®ä½¿ã„å‹æ‰‹å‘ä¸Š
+// ã‚½ãƒ¼ã‚¹æ¦‚è¦ï¼š
+//   ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒå…¥åŠ›ã—ãŸãƒ‡ãƒ¼ã‚¿ã®å±¥æ­´ã‚’ä¸€è¦§è¡¨ç¤ºã—ã€å‰Šé™¤ã‚‚å¯èƒ½ãªãƒ•ã‚©ãƒ¼ãƒ 
 //=================================================================
+
 
 using System;
 using System.Text;
@@ -22,59 +23,59 @@ namespace WindowsFormsApp1
         public Form6()
         {
             InitializeComponent();
-            DisplayHistory(); // ƒtƒH[ƒ€‚Ì‰Šú‰»‚É—š—ğ‚ğ“Ç‚İ‚ñ‚Å•\¦
+            DisplayHistory(); // ãƒ•ã‚©ãƒ¼ãƒ ã®åˆæœŸåŒ–æ™‚ã«å±¥æ­´ã‚’èª­ã¿è¾¼ã‚“ã§è¡¨ç¤º
         }
 
-        // “ü—Í—š—ğiInputHistory.Historyj‚ğ‰æ–Ê‚Éˆê——•\¦‚·‚é
+        // å…¥åŠ›å±¥æ­´ï¼ˆInputHistory.Historyï¼‰ã‚’ç”»é¢ã«ä¸€è¦§è¡¨ç¤ºã™ã‚‹
         private void DisplayHistory()
         {
             var sb = new StringBuilder();
 
-            // —š—ğ‚ª‹ó‚Ìê‡‚ÍˆÄ“àƒƒbƒZ[ƒW‚ğ•\¦
+            // å±¥æ­´ãŒç©ºã®å ´åˆã¯æ¡ˆå†…ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤º
             if (InputHistory.History.Count == 0)
             {
-                sb.AppendLine("—š—ğ‚Í‚ ‚è‚Ü‚¹‚ñB“ü—Í‚ğs‚Á‚Ä‚­‚¾‚³‚¢B");
+                sb.AppendLine("å±¥æ­´ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚å…¥åŠ›ã‚’è¡Œã£ã¦ãã ã•ã„ã€‚");
             }
             else
             {
-                // —š—ğ‚ÌŠe FunctionEntry ƒIƒuƒWƒFƒNƒg‚ğ•¶š—ñ‚Æ‚µ‚Ä’Ç‰Á
+                // å±¥æ­´ã®å„ FunctionEntry ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ–‡å­—åˆ—ã¨ã—ã¦è¿½åŠ 
                 foreach (var entry in InputHistory.History)
                 {
-                    sb.AppendLine(entry.ToString()); // –‘O‚É .ToString() ‚ª“KØ‚É’è‹`‚³‚ê‚Ä‚¢‚é‘O’ñ
+                    sb.AppendLine(entry.ToString()); // äº‹å‰ã« .ToString() ãŒé©åˆ‡ã«å®šç¾©ã•ã‚Œã¦ã„ã‚‹å‰æ
                 }
             }
 
-            // •\¦—pƒeƒLƒXƒgƒ{ƒbƒNƒX‚Ì‰Šúİ’è
-            textBox1.ReadOnly = true;                 // •ÒW•s‰Â
-            textBox1.Multiline = true;                // •¡”s•\¦
-            textBox1.ScrollBars = ScrollBars.Vertical; // cƒXƒNƒ[ƒ‹ƒo[‚ğ•t‚¯‚é
-            textBox1.BackColor = SystemColors.Control; // ”wŒiF‚ğ•W€‚É
-            textBox1.BorderStyle = BorderStyle.None;  // ˜gü‚È‚µ
-            textBox1.TabStop = false;                 // ƒ^ƒuƒL[‚É‚æ‚éƒtƒH[ƒJƒX‚ğœŠO
+            // è¡¨ç¤ºç”¨ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®åˆæœŸè¨­å®š
+            textBox1.ReadOnly = true;                 // ç·¨é›†ä¸å¯
+            textBox1.Multiline = true;                // è¤‡æ•°è¡Œè¡¨ç¤º
+            textBox1.ScrollBars = ScrollBars.Vertical; // ç¸¦ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚’ä»˜ã‘ã‚‹
+            textBox1.BackColor = SystemColors.Control; // èƒŒæ™¯è‰²ã‚’æ¨™æº–ã«
+            textBox1.BorderStyle = BorderStyle.None;  // æ ç·šãªã—
+            textBox1.TabStop = false;                 // ã‚¿ãƒ–ã‚­ãƒ¼ã«ã‚ˆã‚‹ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚’é™¤å¤–
 
-            // —š—ğ“à—e‚ğƒeƒLƒXƒgƒ{ƒbƒNƒX‚É•\¦
+            // å±¥æ­´å†…å®¹ã‚’ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã«è¡¨ç¤º
             textBox1.Text = sb.ToString();
         }
 
-        // –ß‚éƒ{ƒ^ƒ“‚Ìˆ—F—˜—pÒƒƒjƒ…[‚É‘JˆÚ
+        // æˆ»ã‚‹ãƒœã‚¿ãƒ³ã®å‡¦ç†ï¼šåˆ©ç”¨è€…ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«é·ç§»
         private void button1_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
             form3.Show();
-            this.Hide(); // ”ñ•\¦‚É‚·‚é‚±‚Æ‚Å–ß‚é‚Æ‚«‚Ì•œŒ³‚ª‘‚¢iClose ‚Å‚Í”jŠü‚³‚ê‚éj
+            this.Hide(); // éè¡¨ç¤ºã«ã™ã‚‹ã“ã¨ã§æˆ»ã‚‹ã¨ãã®å¾©å…ƒãŒæ—©ã„ï¼ˆClose ã§ã¯ç ´æ£„ã•ã‚Œã‚‹ï¼‰
         }
 
-        // —š—ğíœƒ{ƒ^ƒ“‚Ìˆ—F—š—ğ‚ğƒNƒŠƒA‚µ‚Ä‰æ–Ê‚ğXV
+        // å±¥æ­´å‰Šé™¤ãƒœã‚¿ãƒ³ã®å‡¦ç†ï¼šå±¥æ­´ã‚’ã‚¯ãƒªã‚¢ã—ã¦ç”»é¢ã‚’æ›´æ–°
         private void button2_Click(object sender, EventArgs e)
         {
-            // Šm”FƒƒbƒZ[ƒW‚ğ•\¦iŒë‘€ì–h~j
-            var confirm = MessageBox.Show("—š—ğ‚ğ‚·‚×‚Äíœ‚µ‚Ü‚·‚©H", "Šm”F", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            // ç¢ºèªãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºï¼ˆèª¤æ“ä½œé˜²æ­¢ï¼‰
+            var confirm = MessageBox.Show("å±¥æ­´ã‚’ã™ã¹ã¦å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ", "ç¢ºèª", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm == DialogResult.Yes)
             {
-                InputHistory.History.Clear();  // —š—ğ‚ÌƒŠƒXƒg‚ğƒNƒŠƒAi’†g‚ğíœj
-                DisplayHistory();              // •\¦‚ğXVi‹ó‚Ìó‘Ô‚É‚È‚éj
-                MessageBox.Show("—š—ğ‚ğíœ‚µ‚Ü‚µ‚½B", "Š®—¹", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InputHistory.History.Clear();  // å±¥æ­´ã®ãƒªã‚¹ãƒˆã‚’ã‚¯ãƒªã‚¢ï¼ˆä¸­èº«ã‚’å‰Šé™¤ï¼‰
+                DisplayHistory();              // è¡¨ç¤ºã‚’æ›´æ–°ï¼ˆç©ºã®çŠ¶æ…‹ã«ãªã‚‹ï¼‰
+                MessageBox.Show("å±¥æ­´ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚", "å®Œäº†", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
